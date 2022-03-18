@@ -1,0 +1,2 @@
+Plug 'jnurmine/Zenburn'
+
