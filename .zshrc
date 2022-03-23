@@ -43,7 +43,7 @@ alias mbrew='arch -arm64e /opt/homebrew/bin/brew'
 alias meet="vlc --no-video-deco --no-embedded-video --screen-fps=30 --screen-top=32  --screen-left=0  --screen-width=1920  --screen-height=1000  screen://"
 
 ## GIT
-GIT_AUTHOR_NAME="Chavita1386"
+GIT_AUTHOR_NAME="Salvador Rocha"
 GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
 git config --global user.name "$GIT_AUTHOR_NAME"
 GIT_AUTHOR_EMAIL="chavita1386@gmail.com"
@@ -159,13 +159,15 @@ function removeNodeModules() {
 function pushConfig() {
   cp ~/.zshrc ~/dot-files/.zshrc &&
   cp -R ~/.config/nvim ~/dot-files/.config/ &&
-  cp ~/.oh-my-zsh/themes/alanpeabody.zsh-theme ~/dot-files/alanpeabody.zsh-theme
+  cp ~/.oh-my-zsh/themes/alanpeabody.zsh-theme ~/dot-files/alanpeabody.zsh-theme &&
+  cp -R ~/qmk_firmware/keyboards/crkbd/keymaps/vita_corne/ ~/dot-files/vita_corne
 }
 
 function pullConfig() {
 	cp  ~/dot-files/.zshrc ~/.zshrc &&
   cp -R ~/dot-files/.config/nvim/ ~/.config/nvim &&
-  cp ~/dot-files/alanpeabody.zsh-theme ~/.oh-my-zsh/themes/alanpeabody.zsh-theme
+  cp ~/dot-files/alanpeabody.zsh-theme ~/.oh-my-zsh/themes/alanpeabody.zsh-theme &&
+  cp -R ~/dot-files/vita_corne ~/qmk_firmware/keyboards/crkbd/keymaps/vita_corne/ 
 }
 
 function cdcode() {
