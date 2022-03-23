@@ -43,10 +43,10 @@ alias mbrew='arch -arm64e /opt/homebrew/bin/brew'
 alias meet="vlc --no-video-deco --no-embedded-video --screen-fps=30 --screen-top=32  --screen-left=0  --screen-width=1920  --screen-height=1000  screen://"
 
 ## GIT
-GIT_AUTHOR_NAME="Chavita"
+GIT_AUTHOR_NAME="Chavita1386"
 GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
 git config --global user.name "$GIT_AUTHOR_NAME"
-GIT_AUTHOR_EMAIL="srochar86@hotmail.com"
+GIT_AUTHOR_EMAIL="chavita1386@gmail.com"
 GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 git config --global user.email "$GIT_AUTHOR_EMAIL"
 git config --global credential.helper "cache --timeout 9200"
