@@ -141,7 +141,11 @@ function planck() {
 }
 
 function corne() {
-  nvim ~/qmk_firmware/keyboards/crkbd/keymaps/chavita
+  nvim ~/qmk_firmware/keyboards/crkbd/keymaps/vita
+}
+
+function cdGo() {
+  cd ~/code/go/src/github.com/chavitaRocha/
 }
 
 function findNodeModules() {
