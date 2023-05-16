@@ -1,0 +1,64 @@
+set scrolloff=5
+set incsearch
+set number relativenumber
+set clipboard+=unnamed
+set showmode
+set showcmd
+
+set smartcase
+set incsearch
+set hlsearch
+let mapleader=" "
+
+map Q gq
+map q 
+
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'chrisbra/matchit'
+
+imap jk <Esc>
+imap jj <Esc>
+
+nmap <leader>cf <Action>(ReformatCode)
+nmap <leader>tb <Action>(ToggleLineBreakpoint)
+nmap <leader>h :noh<CR>
+
+nmap <S-l> <Action>(NextTab)
+nmap <S-h> <Action>(PreviousTab)
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-k> <C-w>k
+nnoremap <C-j> <C-w>j
+
+map <leader>q <action>(CloseContent)
+nmap <leader>bd <action>(CloseContent)
+nmap <leader>bp <Action>(PinActiveTabToggle)
+nmap <leader>bP <Action>(CloseAllUnpinnedEditors)
+nmap <leader>s <Action>(SaveDocument)
+
+
+map <leader>e :NERDTreeToggle<CR>
+nmap <leader>n :noh<CR>
+
+map <leader>ff <Action>(GotoFile)
+map <leader>sg <Action>(SearchEverywhere)
+map <leader>ca <Action>(Refactorings.QuickListPopupAction)
+
+map <leader>rn <Action>(RenameElement)
+map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+map <leader>dd <Action>(Debug)
+map <leader>dr <Action>(Run)
+
+" Go to code
+nmap gi <Action>(GotoImplementation)
+nmap <leader>gd <Action>(GotoDeclaration)
+nmap <leader>gy <Action>(GotoTypeDeclaration)
+nmap <leader>gi <Action>(GotoImplementation)
+nmap <leader>gu <Action>(ShowUsages)
+nmap <leader>gt <Action>(GotoTest)
+nmap <leader>gf <Action>(Back)
+nmap <leader>gb <Action>(Forward)
