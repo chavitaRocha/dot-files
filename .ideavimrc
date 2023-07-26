@@ -4,14 +4,16 @@ set number relativenumber
 set clipboard+=unnamed
 set showmode
 set showcmd
+set visualbell
+set noerrorbells
 
 set smartcase
 set incsearch
 set hlsearch
 let mapleader=" "
 
-map Q gq
-map q 
+"map Q gq
+"map q 
 
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
@@ -22,7 +24,11 @@ Plug 'chrisbra/matchit'
 imap jk <Esc>
 imap jj <Esc>
 
+nmap <esc>:noh<CR>
+"nnoremap <esc>:noh<CR>
+nnoremap <esc> :noh<cr><esc>
 nmap <leader>cf <Action>(ReformatCode)
+nmap <leader>cc <Action>(com.intellij.csharpier.ReformatWithCSharpierAction)
 nmap <leader>tb <Action>(ToggleLineBreakpoint)
 nmap <leader>h :noh<CR>
 
@@ -45,13 +51,19 @@ map <leader>e :NERDTreeToggle<CR>
 nmap <leader>n :noh<CR>
 
 map <leader>ff <Action>(GotoFile)
+map <leader>fw <Action>(SearchEverywhere)
+map <leader>fa <Action>(GotoAction)
 map <leader>sg <Action>(SearchEverywhere)
-map <leader>ca <Action>(Refactorings.QuickListPopupAction)
+"map <leader>ca <Action>(Refactorings.QuickListPopupAction)
+map <leader>ca <Action>(ShowIntentionActions)
 
 map <leader>rn <Action>(RenameElement)
 map <leader>rr <Action>(Refactorings.QuickListPopupAction)
-map <leader>dd <Action>(Debug)
+map <leader>dd <Action>(XDebugger.AttachToProcess)
 map <leader>dr <Action>(Run)
+
+"map <leader>xx <Action>(Rider.ProblemsView.CurrentFileShowPreview)
+map <leader>xx <Action>(ActivateProblemsViewToolWindow)
 
 " Go to code
 nmap gi <Action>(GotoImplementation)
@@ -62,3 +74,14 @@ nmap <leader>gu <Action>(ShowUsages)
 nmap <leader>gt <Action>(GotoTest)
 nmap <leader>gf <Action>(Back)
 nmap <leader>gb <Action>(Forward)
+
+nnoremap zc :action CollapseRegion<CR>
+nnoremap zo :action ExpandRegion<CR>
+nnoremap <leader>zc :action CollapseAllRegions<CR>
+nnoremap <leader>zo :action ExpandAllRegions<CR>
+nnoremap <leader>r :action Refactorings.QuickListPopupAction<CR>
+
+nnoremap <leader>% :action SplitVertically<CR>
+nnoremap <leader>v :action SplitHorizontally<CR>
+" nnoremap <c-=> :action Unsplit<CR>
+" nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
