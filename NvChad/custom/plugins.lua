@@ -1,6 +1,5 @@
 local overrides = require "custom.configs.overrides"
 
----@type NvPluginSpec[]
 local plugins = {
 
   -- Override plugin definition options
@@ -16,6 +15,9 @@ local plugins = {
       {
         "jose-elias-alvarez/null-ls.nvim",
         dependencies = { "jose-elias-alvarez/typescript.nvim" },
+        -- opts = function(_, opts)
+        --   table.insert(opts.sources, require "typescript.extensions.null-ls.code-actions")
+        -- end,
         config = function()
           require "custom.configs.null-ls"
         end,
@@ -63,10 +65,16 @@ local plugins = {
     },
     opts = {
       options = {
-      -- stylua: ignore
-      close_command = function(n) require("mini.bufremove").delete(n, false) end,
-      -- stylua: ignore
-      right_mouse_command = function(n) require("mini.bufremove").delete(n, false) end,
+        truncate_names = false, -- whether or not tab names should be truncated
+        -- -- stylua: ignore
+        close_command = function(n)
+          require("mini.bufremove").delete(n, false)
+        end,
+        -- -- stylua: ignore
+        right_mouse_command = function(n)
+          require("mini.bufremove").delete(n, false)
+        end,
+        -- },
       },
     },
   },
@@ -197,17 +205,10 @@ local plugins = {
     config = function() end,
   },
   {
-    "simrat39/rust-tools.nvim",
+    "rust-lang/rust.vim",
     ft = { "rust" },
-    config = function()
-      local on_attach = require("plugins.configs.lspconfig").on_attach
-      local capabilities = require("plugins.configs.lspconfig").capabilities
-      require("rust-tools").setup {
-        server = {
-          on_attach = on_attach,
-          capabilities = capabilities,
-        },
-      }
+    init = function()
+      vim.g.rustfmt_autosave = 1
     end,
   },
   {
@@ -228,6 +229,62 @@ local plugins = {
       require("nvim-ts-autotag").setup()
     end,
   },
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+  },
+  -- {
+  --   "folke/noice.nvim",
+  --   event = "VeryLazy",
+  --   opts = {
+  --     opts = {
+  --       lsp = {
+  --         override = {
+  --           ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+  --           ["vim.lsp.util.stylize_markdown"] = true,
+  --           ["cmp.entry.get_documentation"] = true,
+  --         },
+  --       },
+  --       routes = {
+  --         {
+  --           filter = {
+  --             event = "msg_show",
+  --             any = {
+  --               { find = "%d+L, %d+B" },
+  --               { find = "; after #%d+" },
+  --               { find = "; before #%d+" },
+  --             },
+  --           },
+  --           view = "mini",
+  --         },
+  --       },
+  --       presets = {
+  --         bottom_search = true,
+  --         command_palette = true,
+  --         long_message_to_split = true,
+  --         inc_rename = true,
+  --       },
+  --     },
+  --   },
+  --   dependencies = {
+  --     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+  --     "MunifTanjim/nui.nvim",
+  --     -- OPTIONAL:
+  --     --   `nvim-notify` is only needed, if you want to use the notification view.
+  --     --   If not available, we use `mini` as the fallback
+  --     "rcarriga/nvim-notify",
+  --   },
+  -- },
+  -- {
+  --   "rcarriga/nvim-notify",
+  --   opts = {
+  --   },
+  --   config = function()
+  --     require("notify").setup {
+  --       background_colour = "#000000",
+  --     }
+  --   end
+  -- },
 }
 
 return plugins

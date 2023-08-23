@@ -66,6 +66,13 @@ M.general = {
     ["0"] = { "0w", "", opts = { nowait = true } },
     ["<s-h>"] = { ":bprev<cr>", "prev buffer", opts = { nowait = true } },
     ["<s-l>"] = { ":bnext<cr>", "next buffer", opts = { nowait = true } },
+    ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "window left" },
+    ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "window right" },
+    ["<leader>h"] = { ":vertical resize +8<CR>", "Resize window left", opts = { nowait = true } },
+    ["<leader>l"] = { ":vertical resize -8<CR>", "Resize window left", opts = { nowait = true } },
+    ["<leader>j"] = { ":resize -8<CR>", "Resize window left", opts = { nowait = true } },
+    ["<leader>k"] = { ":resize +8<CR>", "Resize window left", opts = { nowait = true } },
+    ["<leader>cd"] = { ":Telescope diagnostics<CR>", "Code Diagnostics" },
     ["<leader>b"] = { "<cmd> enew <CR>", "Buffers" },
     ["<leader>bn"] = { "<cmd> enew <CR>", "New buffer" },
     ["<leader>rn"] = {

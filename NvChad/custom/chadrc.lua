@@ -17,9 +17,11 @@ vim.o.foldenable = true
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
+vim.opt_local.formatoptions:remove "cro"
+
 M.ui = {
-  theme = "chadtain",
-  theme_toggle = { "chadtain", "one_light" },
+  theme = "nightlamp",
+  theme_toggle = { "nightlamp", "one_light" },
 
   hl_override = highlights.override,
   hl_add = highlights.add,

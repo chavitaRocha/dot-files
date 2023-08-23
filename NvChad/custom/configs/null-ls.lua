@@ -20,7 +20,7 @@ local sources = {
   },
   -- Lua
   formatting.stylua,
-  formatting.rustfmt,
+  -- formatting.rustfmt,
   lint.eslint.with {
     filetypes = { "typescript", "typescriptreact", "javascript", "javascriptrect" },
   },
