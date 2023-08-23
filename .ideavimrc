@@ -23,12 +23,13 @@ Plug 'chrisbra/matchit'
 
 imap jk <Esc>
 imap jj <Esc>
+nmap ; :
 
 nmap <esc>:noh<CR>
 "nnoremap <esc>:noh<CR>
 nnoremap <esc> :noh<cr><esc>
-nmap <leader>cf <Action>(ReformatCode)
-nmap <leader>cc <Action>(com.intellij.csharpier.ReformatWithCSharpierAction)
+nmap <leader>cc <Action>(ReformatCode)
+nmap <leader>cf <Action>(com.intellij.csharpier.ReformatWithCSharpierAction)
 nmap <leader>tb <Action>(ToggleLineBreakpoint)
 nmap <leader>h :noh<CR>
 
@@ -47,7 +48,8 @@ nmap <leader>bP <Action>(CloseAllUnpinnedEditors)
 nmap <leader>s <Action>(SaveDocument)
 
 
-map <leader>e :NERDTreeToggle<CR>
+"map <leader>et :NERDTreeToggle<CR>
+map <leader>e :NERDTree<CR>
 nmap <leader>n :noh<CR>
 
 map <leader>ff <Action>(GotoFile)
@@ -59,7 +61,8 @@ map <leader>ca <Action>(ShowIntentionActions)
 
 map <leader>rn <Action>(RenameElement)
 map <leader>rr <Action>(Refactorings.QuickListPopupAction)
-map <leader>dd <Action>(XDebugger.AttachToProcess)
+map <leader>dd <Action>(Debug)
+map <leader>da <Action>(XDebugger.AttachToProcess)
 map <leader>dr <Action>(Run)
 
 "map <leader>xx <Action>(Rider.ProblemsView.CurrentFileShowPreview)
@@ -85,3 +88,4 @@ nnoremap <leader>% :action SplitVertically<CR>
 nnoremap <leader>v :action SplitHorizontally<CR>
 " nnoremap <c-=> :action Unsplit<CR>
 " nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
+
