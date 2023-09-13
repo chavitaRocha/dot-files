@@ -24,6 +24,7 @@ Plug 'chrisbra/matchit'
 imap jk <Esc>
 imap jj <Esc>
 nmap ; :
+nmap 0 0w
 
 nmap <esc>:noh<CR>
 "nnoremap <esc>:noh<CR>
@@ -41,6 +42,10 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-k> <C-w>k
 nnoremap <C-j> <C-w>j
 
+" bookmarks "
+nmap <leader>bt <Action>(ToggleBookmark)
+nmap <leader>bg <Action>(ShowBookmarks)
+
 map <leader>q <action>(CloseContent)
 nmap <leader>bd <action>(CloseContent)
 nmap <leader>bp <Action>(PinActiveTabToggle)
@@ -49,10 +54,18 @@ nmap <leader>s <Action>(SaveDocument)
 
 
 "map <leader>et :NERDTreeToggle<CR>
-map <leader>e :NERDTree<CR>
+nmap <leader>ee :NERDTree<CR>
+nmap <leader>eg <Action>(ActivateCommitToolWindow)
+nmap <leader>ed <Action>(ActivateDatabaseToolWindow)<CR>
+
+nmap <leader>dm <Action>(ToggleDistractionFreeMode)
+
 nmap <leader>n :noh<CR>
 
+
 map <leader>ff <Action>(GotoFile)
+map <leader>fr <Action>(RecentFiles)
+"map <leader>fs <Action>(SwitcherAndRecentFiles)
 map <leader>fw <Action>(SearchEverywhere)
 map <leader>fa <Action>(GotoAction)
 map <leader>sg <Action>(SearchEverywhere)
