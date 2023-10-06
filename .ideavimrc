@@ -26,13 +26,24 @@ imap jj <Esc>
 nmap ; :
 nmap 0 0w
 
+nnoremap paw "_dawP
+nnoremap pi{ "_di{P
+nnoremap pi} "_di}P
+nnoremap pi( "_di(P
+nnoremap pi) "_di)P
+nnoremap pi' "_di'P
+nnoremap pi" "_di"P
+nmap <leader>p P<CR>
+
 nmap <esc>:noh<CR>
 "nnoremap <esc>:noh<CR>
 nnoremap <esc> :noh<cr><esc>
 nmap <leader>cc <Action>(ReformatCode)
 nmap <leader>cf <Action>(com.intellij.csharpier.ReformatWithCSharpierAction)
 nmap <leader>tb <Action>(ToggleLineBreakpoint)
-nmap <leader>h :noh<CR>
+"nmap <leader>h :noh<CR>
+nmap <leader>l ^<CR>
+nmap <leader>h $<CR>
 
 nmap <S-l> <Action>(NextTab)
 nmap <S-h> <Action>(PreviousTab)
@@ -56,7 +67,8 @@ nmap <leader>s <Action>(SaveDocument)
 "map <leader>et :NERDTreeToggle<CR>
 nmap <leader>ee :NERDTree<CR>
 nmap <leader>eg <Action>(ActivateCommitToolWindow)
-nmap <leader>ed <Action>(ActivateDatabaseToolWindow)<CR>
+nmap <leader>ed <Action>(ActivateDatabaseToolWindow)
+nmap <leader>et <Action>(ActivateTerminalToolWindow)
 
 nmap <leader>dm <Action>(ToggleDistractionFreeMode)
 
@@ -68,6 +80,7 @@ map <leader>fr <Action>(RecentFiles)
 "map <leader>fs <Action>(SwitcherAndRecentFiles)
 map <leader>fw <Action>(SearchEverywhere)
 map <leader>fa <Action>(GotoAction)
+map <leader>fb <Action>(ViewBreakpoints)
 map <leader>sg <Action>(SearchEverywhere)
 "map <leader>ca <Action>(Refactorings.QuickListPopupAction)
 map <leader>ca <Action>(ShowIntentionActions)
@@ -101,4 +114,3 @@ nnoremap <leader>% :action SplitVertically<CR>
 nnoremap <leader>v :action SplitHorizontally<CR>
 " nnoremap <c-=> :action Unsplit<CR>
 " nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
-
